@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define mod 100000000007
+#define ll long long int
+#define PI 3.141592653
+int main()
+{   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    long double r;
+    cin>>r;
+    long double area=(PI*r*r);
+    cout<<fixed<<setprecision(9)<<area<<endl;
+}
