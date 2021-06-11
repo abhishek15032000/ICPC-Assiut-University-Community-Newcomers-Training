@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define mod 100000000007
+#define ll long long int 
+int main()
+{   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll a,b;
+    cin>>a>>b;
+    ll sum=((a%mod)+(b%mod))%mod;
+    ll multiply=((a%mod)*(b%mod))%mod;
+    ll difference=((a%mod)-(b%mod))%mod;
+    cout<<a<<" + "<<b<<" = "<<sum<<endl;
+    cout<<a<<" * "<<b<<" = "<<multiply<<endl;
+    cout<<a<<" - "<<b<<" = "<<difference<<endl;
+}
