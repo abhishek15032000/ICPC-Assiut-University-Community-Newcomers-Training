@@ -1,0 +1,34 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    string ch[3];
+    for(int i=0;i<3;i++)
+    {
+    	cin>>ch[i];
+    //	cout<<ch[i]<<endl;
+    }
+    ll x=stoi(ch[0]);
+    ll y=stoi(ch[2]);
+    
+    if(ch[1]==">")
+    {
+       (x>y)?cout<<"Right"<<endl:cout<<"Wrong"<<endl;
+    	
+    }
+     else if(ch[1]=="<")
+    {
+    	(x<y)?cout<<"Right"<<endl:cout<<"Wrong"<<endl;
+    }
+    else if(ch[1]=="=")
+    {
+    	(x==y)?cout<<"Right"<<endl:cout<<"Wrong"<<endl;
+    }
+    
+}
