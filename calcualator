@@ -1,0 +1,63 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    string str;
+    cin>>str;
+    int index=0;
+    string temp;
+    char ch;
+    for(int i=0;i<str.length();i++)
+    {
+    	if(str[i]=='+' or str[i]=='-' or str[i]=='*' or str[i]=='/')
+    	{   ch=str[i];
+    		index=i;
+    		break;
+    	}
+    	temp+=str[i];
+    }
+    string temp2=str.substr(index+1);
+    switch(ch)
+    {
+    	case '+':
+    	         {
+    	         	ll x=stoi(temp);
+    	         ll y=stoi(temp2);
+    	         ll sum=((x%mod)+(y%mod))%mod;
+    	         cout<<sum<<endl;
+    	         break;
+    	         
+    	         }
+    	case '-':
+    	         {
+    	         ll x=stoi(temp);
+    	         ll y=stoi(temp2);
+    	         ll sum=((x%mod)-(y%mod))%mod;
+    	         cout<<sum<<endl;
+    	         break;
+    	         }
+       case '*':
+                 {
+                 ll x=stoi(temp);
+    	         ll y=stoi(temp2);
+    	         ll sum=((x%mod)*(y%mod))%mod;
+    	         cout<<sum<<endl;
+    	         break;
+                 }
+      	case '/': 
+      	         {
+      	         ll x=stoi(temp);
+    	         ll y=stoi(temp2);
+    	         ll sum=((x%mod)/(y%mod))%mod;
+    	         cout<<sum<<endl;
+    	         break;
+      	         }
+    }
+    
+}
