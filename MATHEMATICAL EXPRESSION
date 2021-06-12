@@ -1,0 +1,28 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    ll a;string str1;ll b;string str2;ll c;
+    cin>>a>>str1>>b>>str2>>c;
+  //  cout<<a<<" "<<str1<<" "<<b<<" "<<str2<<" "<<c<<endl;
+    if(str1=="+")
+    {  ll sum=((a%mod)+(b%mod))%mod;
+       (sum==c)?cout<<"Yes"<<endl:cout<<sum<<endl;
+    	
+    }
+     else if(str1=="-")
+    {   ll sum=((a%mod)-(b%mod))%mod;
+    	(sum==c)?cout<<"Yes"<<endl:cout<<sum<<endl;
+    }
+    else if(str1=="*")
+    {     ll sum=((a%mod)*(b%mod))%mod;
+    	(sum==c)?cout<<"Yes"<<endl:cout<<sum<<endl;
+    }
+    
+}
