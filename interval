@@ -1,0 +1,35 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    double x;
+    cin>>x;
+    if(x>=0.0000 and x<=25.0000)
+    {
+    	cout<<"Interval "<<"["<<0<<","<<25<<"]"<<endl;
+    }
+    else if(x>25.0000 and x<=50.0000)
+    {
+    	cout<<"Interval "<<"("<<25<<","<<50<<"]"<<endl;
+    }
+    else if(x>50.0000 and x<=75.0000)
+    {
+    	cout<<"Interval "<<"("<<50<<","<<75<<"]"<<endl;
+    }
+    else if(x>75.0000 and x<=100.0000)
+    {
+    	cout<<"Interval "<<"("<<75<<","<<100<<"]"<<endl;
+    }
+    else
+    {
+    	cout<<"Out of Intervals"<<endl;
+    }
+    
+    
+}
