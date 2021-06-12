@@ -1,0 +1,29 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    ll arr[3]={0};
+    ll arr2[3]={0};
+    for(int i=0;i<3;i++)
+    {
+    	cin>>arr[i];
+    	arr2[i]=arr[i];
+    }
+    sort(arr,arr+3);
+    for(auto x:arr)
+    {
+    	cout<<x<<endl;
+    }
+    cout<<"\n";
+    for(auto x:arr2)
+    {
+    	cout<<x<<"\n";
+    }
+    
+}
