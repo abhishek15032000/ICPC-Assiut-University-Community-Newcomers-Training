@@ -1,0 +1,39 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    string str;
+    cin>>str;
+    //int
+    bool flag1=true;
+    
+	int index=str.find(".");
+	string temp;
+	for(int i=0;i<index;i++)
+	{
+		temp+=str[i];
+	}
+	for(int i=index+1;i<str.length();i++)
+	{
+		if(str[i]!='0')
+		{
+			flag1=false;
+			break;
+		}
+	}
+	string temp2=str.substr(index+1);
+	if(!flag1)
+	{
+		cout<<"float "<<temp<<" "<<"0."<<temp2<<endl;
+	}
+	else
+	{
+		cout<<"int "<<temp<<endl;
+	}
+}
