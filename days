@@ -1,0 +1,21 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000009
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    ll x;
+    cin>>x;
+    ll years=x/365;
+    ll months=(x%365)/30;
+    ll days=((x%365)%30);
+    cout<<years<<" "<<"years"<<endl;
+    cout<<months<<" "<<"months"<<endl;
+    cout<<days<<" "<<"days"<<endl;
+    
+    
+}
