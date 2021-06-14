@@ -1,0 +1,21 @@
+
+ex a*b*c*d
+
+where a ,b, c ,d ae very large 
+
+
+then we can find last two digits without multiplying
+
+
+by ll value=((a%100)*(B%100)*(C%100)*(d%100))%100
+
+
+if(value <10)
+then we have to add 0 to it int the beginning 
+cout<<"0."<<value<<"\n"l
+
+because like a number 9100002 has last two digits as 02 but the above value will be giving only 2 so we add 0.to it
+
+
+cout<<value<<"\n";
+
