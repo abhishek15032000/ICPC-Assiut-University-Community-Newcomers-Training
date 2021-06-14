@@ -1,0 +1,15 @@
+find intersection of two intervals 
+
+(a,b) and (c,d)
+
+
+c,d will intersect with a and b onlu when 
+
+c<b
+or d>a
+
+
+such that the intersection region would be for left value is max(a,c) and min(b,d) 
+
+
+
