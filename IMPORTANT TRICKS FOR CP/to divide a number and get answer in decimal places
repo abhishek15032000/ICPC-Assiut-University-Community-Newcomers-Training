@@ -1,0 +1,12 @@
+if divide an integer/integer we get only integer part but not the decimal part as it gets truncated
+
+
+ex 10/3 would be give 3 only
+whereas it we expect it to give 3.33333
+
+so do this we take either numerator or denominator in double or float value 
+
+
+10/3.0 this would give the required result 3.333333
+
+
