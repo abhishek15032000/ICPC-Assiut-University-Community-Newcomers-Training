@@ -1,0 +1,22 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/G---problem link 
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    ll a,b,c;
+    cin>>a>>b>>c;
+    ll ans=min(a,b);
+    a=a-ans;
+    if(a>0)
+    {
+    	ans+=a/2;
+    }
+    ans=min(ans,c);
+    cout<<ans<<endl;
+}
