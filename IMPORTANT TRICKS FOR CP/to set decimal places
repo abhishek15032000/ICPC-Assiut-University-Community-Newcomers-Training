@@ -1,0 +1,19 @@
+here fixed has the meaning that in the value of x the values before decimal are fixed and the number of decimal places we want can get by setprecision(n) where n is 
+the no of decimal places you want 
+
+
+
+if we dont write fixed and then give only setprecision(n) then this n will tell us about how many integers will be there in the answer in which dcimal point is 
+also included
+
+for ex-3.3335894
+cout<<setprecision(n)<<x<<endl;
+if n=6 it would give 3.3335  whereas it should be giving 3.333589
+
+
+
+to get 3.333589 we use fixed in the print statement so that the values before the decimal part are not included in this n 
+and we want n only to tell the decimal places we want
+
+
+cout<<fixed<<setprecision(n)<<x<<endl;
