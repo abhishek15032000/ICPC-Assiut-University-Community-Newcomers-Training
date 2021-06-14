@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll x,p;
+	cin>>x>>p;
+	double original_price=p/((100.00-(double)x)/(100.00));
+	cout<<fixed<<setprecision(2)<<original_price<<"\n";
+}
