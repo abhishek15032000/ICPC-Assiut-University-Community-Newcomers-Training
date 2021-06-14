@@ -1,0 +1,36 @@
+
+a problem where a and b were given 
+where a and b , a and b are integers 
+a= no of odd numbers
+b= no of even numbers
+
+we are given an interval of 0 till 100
+
+we need to give yes or no 
+
+if there exist and interval for which there are a no of odd numbers and b number of even numbers
+
+
+
+since we need a +b numbers
+
+if sum is even then that means that no of odds == no of evens 
+
+
+as for 1st 10 numbers it is a fact that there are 5 even and 5 odd numbers
+
+and it for all
+like 20-30 and 30-40 
+
+so in 1 -100 we have 50 even and 50 odd numbers
+
+
+if sum is even then odd ==even as 10 was also even and we have same no of odd and even integers
+
+whereas in case of sum is odd we can have
+
+either one of them greater than each other by atmost 1 
+
+like no of odd or no of evens in the interval will be greater than the other exactly by 1
+
+if it not this then we dont have a valid interval for such a and b
