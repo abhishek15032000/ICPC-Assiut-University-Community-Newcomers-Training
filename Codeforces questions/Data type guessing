@@ -19,4 +19,30 @@ https://codeforces.com/blog/entry/16101----to know all the codes of the data typ
   
   
   
-  i was not able to solve the problem :(
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 100000000000007
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    ll n,k,a;
+    cin>>n>>k>>a;
+    
+    if((n*k)%a!=0)
+    {
+    	cout<<"double"<<"\n";
+    }
+    else if(abs((n*k))/a>INT_MAX)
+    {
+    	cout<<"long long"<<"\n";
+    }
+    else
+    {
+    	cout<<"int"<<"\n";
+    }
+    
+}
