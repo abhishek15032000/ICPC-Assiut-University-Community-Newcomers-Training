@@ -1,0 +1,54 @@
+
+
+a number is called a prime numeber if no other nother other than( 1 and the number itsef ) divides it 
+
+
+like for ex 7 only 1 can divide 7 and 7 can divide itself but no other number can completely divide the number 7 so it has only two divisors
+
+so it is a prime number
+
+
+
+NOTE:-1 is not a prime number ,,neither a composte number
+
+
+composite numbers are those which have one extra number which divides the number other than ( 1 and the number itself)
+
+
+ex :15 it has (1,15) and 3 so it is a composite number
+
+
+
+FACT CHECK := the divisors of a number always occur in pair as (A,B)
+
+where a and b both divide N
+
+the formula is 
+
+A X B =N
+
+if we know A then we can calucalate B also 
+
+
+and a FACT :- A will alwasys lie below sqrt(N) and B will always lie above sqrt(N) 
+
+and A and B both will be AT SQRT(N) in case if N is a perfect square like for 25 it has divisor 5 and 5 which are sqrt(25)
+
+
+SO 5*B=25
+so B=5
+
+
+if(n==1)
+return false;
+else
+for(int i=2;i*i<=n;i++)
+{
+   if(n%i==0)
+   {
+     return false;
+  }
+}
+return true;
+
+
