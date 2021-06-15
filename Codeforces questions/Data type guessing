@@ -1,0 +1,22 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/H  --problem link
+
+
+
+i got to know about typeid function
+
+
+int k;
+cout<<typeid(k).name()<<endl;
+
+
+
+it will return a string which symbolises what data type it is 
+
+like char ,int ,long long ,unsigned,long double and all variou stl data types and user defined data types also
+
+
+https://codeforces.com/blog/entry/16101----to know all the codes of the data types return by it
+  
+  
+  
+  i was not able to solve the problem :(
