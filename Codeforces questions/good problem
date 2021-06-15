@@ -20,3 +20,28 @@ int main()
     ans=min(ans,c);
     cout<<ans<<endl;
 }
+
+
+
+2nd approch
+
+
+//because in most of the dolls we need these two
+if(a==0 and c==0)
+{
+cout<<0<<endl;
+}
+
+ll ans=0;
+if(a>0 and b>0 and c>0)
+{
+ll val=min(a,min(b,c));
+ans+=val;
+a=a-val;
+b=b-val;
+c=c-val;
+}
+
+ans+=min(a/2,c);
+cout<<ans<<endl;
+
