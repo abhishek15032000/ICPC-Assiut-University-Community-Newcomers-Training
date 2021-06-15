@@ -1,0 +1,46 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/I--link
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int  main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    long long int  n;
+    cin>>n;
+    if(n%10==0)
+    {
+    	cout<<"YES"<<endl;
+    	return 0;
+    }
+    if(n<10)
+    {
+    	cout<<"NO"<<"\n";
+    }
+    else if(n>99)
+    {
+    	cout<<"NO"<<"\n";
+    }
+    else
+    {   
+    	long long int last=n%10;
+    	long long int first=n/10;
+    	
+    	if(first%last==0 )
+    	{
+    		cout<<"YES"<<"\n";
+    	}
+    	else if(last%first==0)
+    	{
+    		cout<<"YES"<<"\n";
+    	}
+    	else
+    	{
+    		cout<<"NO"<<"\n";
+    	}
+    }
+    
+}
