@@ -1,0 +1,49 @@
+find DIVISORS OF A NUMBER 
+
+
+like we learned a concept in prime numbers that divisors of  a number exist in pairs
+
+
+and with the formula A X B=N
+
+where (a,b) are the divisior of N 
+
+
+if we know a we can find out B by putting it in the formula A x B=N
+
+
+so we only need to iterate till sqrt(n)
+
+
+and the other divisor we will find out by the formula and print it ..so we dont have to iterate for all numbers from 1 to N to find all the
+divisors it can be done in running a loop form 1 to SQRT(N)
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define max  1000000
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll n;
+	cin>>n;
+	set<ll> s;
+	for(ll i=1;i*i<=n;i++)
+	{
+		if(n%i==0)
+		{
+			ll x=n/i;
+			s.insert(i);
+			s.insert(x);
+		}
+	}
+	
+	for(auto &x:s)
+	{
+		cout<<x<<"\n";
+	}
+}
