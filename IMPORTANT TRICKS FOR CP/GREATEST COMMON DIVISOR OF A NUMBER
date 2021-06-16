@@ -1,0 +1,27 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/L  ---PROBLEM LINK 
+
+
+
+
+For example:
+
+the GCD of 8 and 12 is 4.
+
+because the numbers that divides both 8 and 12
+
+
+8 has divisors (1,2,4,8)
+12 has divisors (1,2,3,4,6,12)
+
+now diviosrs they have in common is
+
+(1,2,4) AND AMONG THIS 4 is the highest number they have in common so this is the GCD(greatest common divisor) aur (HIGEST COMMON FACTOR) HCF
+
+
+
+
+
+
+
+
+
