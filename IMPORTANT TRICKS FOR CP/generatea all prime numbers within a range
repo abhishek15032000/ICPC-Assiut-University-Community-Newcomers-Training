@@ -1,0 +1,82 @@
+
+
+earlier we saw how to find out whether a number is prime or not 
+
+for ex 7 is prime or not
+
+
+then did a process of sqrt(7) complexity 
+
+
+but now the problem has been leveled up
+
+
+here we are given up :-
+
+Q quries 
+where q<=100000 or maybe more
+
+
+and n<=100000000
+
+so if a number n is given we need to find all numbers within a range say 1 to N
+
+then if we check for each number between 1 and N with sqrt(N) TIME COMPLEXITY then total time complexity would become (N)^3/2
+
+and if N is very large then it would give time Limit exceeded(TLE)
+
+
+SO WHAT WE DO IS PRECOMPUTE UPTO A VERY LARGE N ...which means we have already find out prime numbers between 1 and N(very large )
+
+
+and when we get input for any number for which we have to find prime numbers between 1 and the number
+
+can be done in 0(n) time AND WE CAN KNOW IF THE NUMBER given is prime or not in 0(1) time complexity
+
+
+and this is done at a cost of extra space 0(N) 
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define max  1000000
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    
+    	bool arr[max];
+	for(int i=1;i<=max;i++)
+	{
+		arr[i]=1;
+	}
+	arr[0]=0;
+	arr[1]=0;
+	for(int i=2;i*i<=max;i++)
+	{
+		if(arr[i]!=0)
+		{
+			for(int j=i*i;j<=max;j+=i)
+			{
+				if(arr[j]!=0)
+				{
+					arr[j]=0;
+				}
+			}
+		}
+	}
+	ll n;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+	{
+		if(arr[i]!=0)
+		{
+			cout<<i<<" ";
+		}
+	}
+}
