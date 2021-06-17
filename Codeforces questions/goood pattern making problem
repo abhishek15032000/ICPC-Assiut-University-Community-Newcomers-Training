@@ -1,0 +1,99 @@
+
+
+pattern making ---implementation problem ---https://codeforces.com/group/MWSDmqGsZm/contest/326907/problem/B
+
+
+\***/
+*\*/*
+**X**      --------MAKE THIS PATTERN 
+*/*\*
+/***\
+
+
+LEARNED  A NEW THING THAT WE CANNOT PRINT \ BY DOING 
+COUT<<"\" ;it will always give error
+
+so backslash can always be printed by "\\"
+cout<<"\\";
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+#define mod 10000000007
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll n;
+	cin>>n;
+	int forward_slash=1;
+	int backward_slash=n;
+	for(int i=1;i<=((n/2)+1);i++)
+	{
+		if(forward_slash!=backward_slash)
+		{
+		   for(int i=1;i<forward_slash;i++)
+		   {
+		   	cout<<"*";
+		   }
+		   cout<<"\\";
+		   forward_slash++;
+		   for(int i=forward_slash;i<backward_slash;i++)
+		   {
+		   	cout<<"*";
+		   }
+		   cout<<"/";
+		   for(int i=backward_slash;i<n;i++)
+		   {
+		   	cout<<"*";
+		   }
+		   backward_slash--;
+		   cout<<"\n";
+		   
+		}
+		else
+		{   int j;
+			for( j=1;j<forward_slash;j++)
+			{
+				cout<<"*";
+			}
+			cout<<"X";
+			j++;
+			for(;j<=n;j++)
+			{
+				cout<<"*";
+			}
+			cout<<"\n";
+		}
+	}
+    int left_over=n-((n/2)+1);
+    forward_slash++;
+    backward_slash--;
+    for(int i=1;i<=left_over;i++)
+    {
+       for(int i=1;i<backward_slash;i++)
+       {
+       	cout<<"*";
+       }
+       cout<<"/";
+       int j=backward_slash+1;
+       for(;j<forward_slash;j++)
+       {
+       	cout<<"*";
+       }
+       cout<<"\\";
+       int r=forward_slash;
+       for(;r<n;r++)
+       {
+       	cout<<"*";
+       }
+       cout<<"\n";
+       backward_slash--;
+       forward_slash++;
+    }
+    
+}
