@@ -1,0 +1,37 @@
+we can find how many times a number can be completely divided by 2
+
+like for ex :-
+
+
+24/2=12 and remainder=0
+12/2=6 and remainder=0
+6/2=3 and remainder=0
+3/2=1 and remainder =0
+
+so there are 3 times when we could completely divide the number by 2
+
+which is also the trailing zeroes in the binary of the number
+
+011000 is the binary of 24 and the no of 0's before the first 1 is our anwwer so these are called trailing zeroes
+
+to count this
+
+we have a function
+
+__buitin_ctz(x) where x is the number of which we need to find out
+
+for long data type it is :- __buitin_ctzl(x)
+    long long data type it is:-  __buitin_ctzll(x)
+    
+    
+    and for finding number of 1's in the binary of any number is __buitin_popcount(x)
+    
+for counting no of leading zeroes in a number it is:-
+__builtin_clz(x);
+
+
+https://www.geeksforgeeks.org/builtin-functions-gcc-compiler/-----it contains important builtin functions  
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/326907/problem/F----problem   
