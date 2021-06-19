@@ -1,0 +1,30 @@
+here if we are given in APAC format where we need to take input for our program from 
+some file and give output in some file
+
+
+for exmaple take input 
+from:addin.txt
+output:addout.txt
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  freopen("addin.txt","r",stdin);
+  freopen("addout.txt","w",stdout);
+  int a,b;
+  cin>>a>>b;
+  int sum=a+b;
+  cout<<sum<<"\n";
+}
+
+
+here using namespace std is used because we dont want to write everywhere we write cin and cout
+that it comes from namespace std
+like std::cin>>a
+std::cout<<a;
+
+so we already specify that cin and cout come from namespace std -by writing namespace std
+
