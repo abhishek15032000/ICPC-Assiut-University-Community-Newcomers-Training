@@ -1,0 +1,57 @@
+
+
+
+
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/326907/problem/G   ---PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll unsigned long long int 
+
+void recurse(ll n,ll s)
+{
+	if(s<=n)
+	{cout<<s<<" ";
+	return;
+	}
+	cout<<n<<" ";
+	recurse(n-1,s-n);
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll t;
+	cin>>t;
+	while(t--)
+	{
+	ll n,s;
+	cin>>n>>s;
+	ll sum=(n*(n+1))/2;
+	if(s>sum)
+	{
+		cout<<-1<<"\n";
+	}
+	else
+	{  
+		recurse(n,s);
+		cout<<"\n";
+	}
+	}
+}
