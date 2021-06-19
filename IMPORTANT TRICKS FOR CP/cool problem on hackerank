@@ -1,0 +1,37 @@
+in this question i was not able to think about the edge cases
+becuase of which i was failing 
+but by seeking guidance i got my mistake and submitted it 
+
+
+thus----
+when we get an array and if we are not given that array contains distinct elements
+
+then edge cases-
+duplicate present
+all are duplicates 
+
+
+this is where i relaized this mistake
+
+
+https://www.hackerrank.com/challenges/cut-the-sticks/copy-from/219551746---problem 
+
+
+ sort(arr.begin(),arr.end());
+    vector<int>p;
+    p.push_back(arr.size());
+    for(int i=1;i<arr.size();i++)
+    {
+        if(arr[i]!=arr[i-1])
+        {
+            p.push_back(arr.size()-i);
+        }
+    }
+    
+    return p;
+    
+    this is the optimized solution provided by another programmer 
+    
+    
+    my was naive 
+    
