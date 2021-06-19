@@ -1,0 +1,35 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/326907/problem/H    ---problem statement 
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	string s;
+	cin>>s;
+	cout<<0<<" "<<0<<"\n";
+	
+}
+
+
+this is its solution
+
+
+wheneever we have non negative or non positive then one value must be 0 and other mut be c^2
+pyhtogram theorem 
+
+a^2+b^2=c^2
+
+then we can put a=0 and b=c this would be a solution
+
+(a*a +b*b)%n==0 so as n <=10^100 then we need a string to do it ...and then we need to find n^2 which will be diificult of such a large number 
+as stoi gives upto 10^18 and no other data type can hold such big integers as maximum is 2^63-1 
+
+
+so we do greedily as we know evey number divides completely 0 so both a and b can be 0 and will givve modulus 0 
