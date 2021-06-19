@@ -1,0 +1,39 @@
+a good maths problem based on intersection of rectangles :-
+
+
+
+https://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=372   ----   site for the problem
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll x1,y1,x2,y2;
+	cin>>x1>>y1>>x2>>y2;
+	ll x3,y3,x4,y4;
+	cin>>x3>>y3>>x4>>y4;
+	
+	ll left_most=max(x1,x3);
+	ll right_most=min(x2,x4);
+	ll top_most=min(y2,y4);
+	ll bottom_most=max(y1,y3);
+	
+	ll area1=(x2-x1)*(y2-y1);
+	ll area2=(x4-x3)*(y4-y3);
+	
+	ll area3=0;
+	if(top_most>=bottom_most and left<right)
+	{
+		area3=(right_most-left_most)*(top_most-bottom_most);
+	}
+	ll total_area=area1+area2-area3;
+	cout<<total_area<<"\n";
+}
