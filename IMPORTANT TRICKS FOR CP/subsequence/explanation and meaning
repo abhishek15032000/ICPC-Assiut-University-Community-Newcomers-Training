@@ -1,0 +1,70 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/U    -----problem link
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll a,b;
+	cin>>a>>b;
+	ll arr[a];
+	for(ll i=0;i<a;i++)
+	{
+		cin>>arr[i];
+	}
+	ll arr2[b];
+	for(ll i=0;i<b;i++)
+	{
+		cin>>arr2[i];
+	}
+	ll i=0;
+	ll j=0;
+	while(i<a and j<b)
+	{
+		if(arr[i]==arr2[j])
+		{
+			i++;
+			j++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	if(j!=b)
+	{
+		cout<<"NO"<<endl;
+	}
+	else
+	{
+		cout<<"YES"<<endl;
+	}
+}
