@@ -1,0 +1,101 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/329103/problem/E    ----- alteranting arrays problem 
+
+
+
+
+here i did miss an approach of doing it  
+i made a msitake in which i tried to find how many operations we take to make it alternating the ooriginal array
+
+and the no of steps takent to make it alteranting if it is sorted ...then i would take minimum of these two count and print them  ...but it was a wrong solution
+
+
+
+
+the real solution was 
+the alteranting sequence would be 
+like for ex:-
++1 -1 +1 -1 +1 -1
+(start from positive element )
+
+or 
+
+-1 +1 -1 +1 -1 +1 1
+(start from -negative element)
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll n;
+	cin>>n;
+	vector<int>v;
+	for(int i=0;i<n;i++)
+	{
+		ll x;
+		cin>>x;
+		v.push_back(x);
+	}
+    int count1=0;int count2=0;
+    //+1 -1 +1 -1 +1 -1
+    for(int i=0;i<n;i++)
+    {
+    	if(i%2==1)
+    	{
+    		if(v[i]>0)
+    		{
+    			count1++;
+    		}
+    	}
+    	else
+    	{
+    		if(v[i]<0)
+    		{
+    			count1++;
+    		}
+    	}
+    }
+    
+    //-1 +1 -1 +1 -1 +1
+    for(int i=0;i<n;i++)
+    {
+    	if(i%2==1)
+    	{
+    		if(v[i]<0)
+    		{
+    			count2++;
+    		}
+    	}
+    	else
+    	{
+    		if(v[i]>0)
+    		{
+    			count2++;
+    		}
+    	}
+    }
+    cout<<min(count1,count2)<<endl;
+}
+
+here i assume that each odd index would have negative number if not then i need to convert it and it would cost a step
+and each positve number is at even position and will be positive ,if it is not postive then i need to make it positive that would cost me a step
+so this would be the count....in order to make it look like +1 -1 +1 -1 +1 -1 what is the cost i will incur that is in count1
+
+
+
+and similarly i did it for the other format like -1 +1 -1 +1 -1 +1 
+
+so here i assume the even index will hold a  positive value and odd index is holding a negative value
+
+if not then i need to change those numbers into the above format and that would incur some cost and is stored in count2
+
+
+so i take minimum of (count1,count 2) and print it....that would be the minimum no of steps to make it an alteranting array  
+
+
+	
