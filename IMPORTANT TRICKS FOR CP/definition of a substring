@@ -1,0 +1,36 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/H    ----problem explanation 
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll t;
+	cin>>t;
+	cin.get();
+	while(t--)
+	{
+		string temp;
+		getline(cin,temp);
+	    if(temp.find("101")!=string::npos)
+	    {
+	    	cout<<"Good"<<endl;
+	    }
+	    else if(temp.find("010")!=string::npos)
+	    {
+	    	cout<<"Good"<<endl;
+	    }
+	    else
+	    {
+	    	cout<<"Bad"<<endl;
+	    }
+	    temp.clear();
+	}
+}
+
