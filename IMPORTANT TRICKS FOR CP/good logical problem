@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/329103/problem/G    ------problem link
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll t;
+	cin>>t;
+	while(t--)
+   {	
+	ll n;
+	cin>>n;
+	ll count_even=0;
+	ll count_odd=0;
+	for(int i=0;i<n;i++)
+	{
+		ll x;
+		cin>>x;
+		if(x&1)
+		{
+			count_odd++;
+		}
+		else
+		{
+			count_even++;
+		}
+	}
+	     if(n&1)
+		{
+			cout<<-1<<endl;
+			continue;
+		}
+	if(count_even==count_odd)
+	{
+		cout<<0<<endl;
+		continue;
+	}
+	else
+	{
+		
+		if(count_odd>count_even)
+		{
+			ll eq=n/2;
+			ll diff=count_odd-eq;
+			cout<<diff<<endl;
+		}
+		else
+		{
+			ll eq=n/2;
+			ll diff=count_even-eq;
+			cout<<diff<<endl;
+		}
+	}
+  }
+}
