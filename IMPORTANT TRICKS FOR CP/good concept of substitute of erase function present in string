@@ -1,0 +1,90 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/R    ----problem code
+
+
+
+
+here i first used string erase function so that i could remove a character from a particular index and sting would resize itself 
+but this operation is expesnive and can take 0(N) TIME COMPLEXITY and that made my overall code of n^2 at some cases and i got TLE(XD)
+
+so i optimized it by
+which elements i need to remove i will not use erase fucntion i will just skip it
+which is equivalent to deleting in terms of traversal of a string 
+
+and here one more important thing that the next (i+1) index which needs to be deleted or pushed back must be a valid index 
+like(i+1<length of the string)
+
+
+
+and for case y we optimized it by stroing and skiiping its index and pushing back the char to back of string and after doing this we increased our string length 
+by doing n++ so that it performs equivalent to an erase and push back the char to back of a string as it needs to be present in the string and not be deleted 
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	ll n;
+	cin>>n;
+	cin.get();
+	string s;
+	cin>>s;
+	ll total_score=0;
+	for(int i=0;i<n;i++)
+	{
+		if(s[i]=='V')
+		{
+			total_score+=5;
+		}
+		else if(s[i]=='W')
+		{
+			total_score+=2;
+		}
+		else if(s[i]=='Y')
+		{   if(i+1<s.length())
+			{
+				n++;
+				char x=s[i+1];
+				i=i+1;
+				s.push_back(x);
+				continue;
+			}
+		}
+		else if(s[i]=='X')
+		{   if(i+1<s.length())
+			{
+				i=i+1;
+				continue;
+			}
+		}
+		else
+		{
+			if(s[i+1]=='V')
+			{
+				total_score/=5;
+				if(i+1<s.length())
+				{i=i+1;
+				continue;
+				}
+				
+			}
+			else if(s[i+1]=='W')
+			{
+				total_score/=2;
+				if(i+1<s.length())
+				{i=i+1;
+				continue;
+				}
+			}
+			
+			
+		}
+	}
+	cout<<total_score<<endl;
+}
