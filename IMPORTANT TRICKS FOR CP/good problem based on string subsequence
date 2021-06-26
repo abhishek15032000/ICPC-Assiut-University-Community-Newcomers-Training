@@ -1,0 +1,36 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/N    ----- --problem statement 
+
+
+earlier i got tle as i did it the naive way by generating all subsequences of a string and then finding maximum among them which does not have adjacents repeating
+...but the constraints were high as 10^5 so it wouldn't pass 
+
+
+very interesting approach to solve this problem
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll n;
+	cin>>n;
+	cin.get();
+	string s;
+	cin>>s;
+    int count=0;
+    char h='.';
+    for(int i=0;i<s.length();i++)
+    {
+    	if(h!=s[i])
+    	{
+    		h=s[i];
+    		count++;
+    	}
+    }
+    cout<<count<<endl;
+}
+	 
