@@ -1,0 +1,75 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/U    ------problem link
+ 
+
+
+
+here i did what i found intutive that count total no of e's and y's and p's and g's and t's which includes capital and smal letters 
+
+
+and then divide by 5 because egypt is  five letter word 
+
+
+but in this what could happen is that we could have duplicates in the group
+
+
+my approach made groups but never made sure that they form the word egypt or not
+
+
+
+so i thought and did some paper work
+
+like if there are lets say n e's
+then in each group there should be e or E unitl n becomes zero that means until i could form a word egypt until i have all characters present to make it
+
+
+so as we are making up words there counts are decreasing so...now 
+the most common ans ...would be that no of words could be formed using those words would me minimum of count of all characters 
+
+
+as soon as anyone characters count gets to 0 ,,,,we can not make egpyt 
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	string s;
+	getline(cin,s);
+	int count_e=0;
+	int count_g=0;
+	int count_y=0;
+	int count_p=0;
+	int count_t=0;
+	for(int i=0;i<s.length();i++)
+	{
+		if(s[i]=='e' or s[i]=='E')
+		{
+			count_e++;
+		}
+		else if(s[i]=='g' or s[i]=='G')
+		{
+			count_g++;
+		}
+		else if(s[i]=='y' or s[i]=='Y')
+		{
+			count_y++;
+		}
+		else if(s[i]=='p' or s[i]=='P')
+		{
+			count_p++;
+		}
+		else if(s[i]=='t' or s[i]=='T')
+		{
+			count_t++;
+		}
+	}
+	 int ans=min(min(count_t,count_g),min(count_p,count_y));
+     ans=min(count_e,ans);
+	cout<<ans<<endl;
+}
