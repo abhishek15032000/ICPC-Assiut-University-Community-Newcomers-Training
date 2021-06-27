@@ -1,0 +1,58 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/S   -----problem link
+
+
+
+
+
+here i was confused of how to split
+then i thought of generating all such subsequences and storing only those which are not repeating like they dont have same length as the previous stirng we inserted
+but it was a naive approach and i was making mistakes in its implementation
+
+
+
+so i thought of asking someone he said it is a greedy problem 
+
+he and i were on the same lines but my thinking was too naive ...his was simple and general 
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);  
+	string s;
+	getline(cin,s);
+	vector<string>v;
+	string k="";
+	int count_l=0;
+	int count_r=0;
+	for(int i=0;i<s.length();i++)
+	{
+		if(s[i]=='L')
+		{
+			count_l++;
+	     	k+=s[i];
+		}
+		else
+		{  count_r++;
+		   k+=s[i];
+		}
+		if(count_l==count_r)
+		{
+			v.push_back(k);
+			k="";
+		}
+	}
+	cout<<v.size()<<endl;
+	for(auto &x:v)
+	{
+		cout<<x<<endl;
+	}
+}
