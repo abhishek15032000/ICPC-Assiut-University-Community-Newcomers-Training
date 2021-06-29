@@ -1,0 +1,37 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/A    ----- PROBLEM LINK
+
+
+
+I was confused as i knew log2(n) if it is integer it will be power of 2 ,,,if it had decimal values it will not be a power of 2
+
+now i started taking direction of typeid().name() but did not get anywhere 
+
+
+then i saw gfg blog where it said if the ceil(log2(n)) == (floor(log2(n))  then it is a power of 2 number else not  and 0 is not a power of 2 -EDGE CASE 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    if(n==0)
+    {
+        cout<<"NO"<<endl;
+        return 0;
+    }
+    if(ceil(log2(n))==floor(log2(n)))
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+ 
+}
