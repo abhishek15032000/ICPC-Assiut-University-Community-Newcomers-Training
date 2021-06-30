@@ -1,0 +1,71 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/C   ----PROBLEM LINK
+
+
+
+
+https://www.geeksforgeeks.org/sum-of-all-even-numbers-in-range-l-and-r/     ----GFG EXPLANATION
+
+
+
+CODE
+////
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 10000000000000000007
+ll calculate(ll a)
+{
+	ll sum=((a)%mod*(a+1)%mod)/2;
+	sum=sum%mod;
+	return sum;
+}
+ll calculate2(ll a)
+{
+    ll sum=((a)%mod*(a+1)%mod);
+	sum=sum%mod;
+    return sum;
+}
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll a,b;
+   cin>>a>>b;
+   if(a<b)
+   {
+       ll sum1=calculate(a-1);
+       ll sum2=calculate(b);
+       ll diff=sum2-sum1;
+       cout<<diff<<endl;
+       a=(a-1)/2;
+       b=b/2;
+       ll sum3=calculate2(a);
+       ll sum4=calculate2(b);
+       ll diff2=sum4-sum3;
+       cout<<diff2<<endl;
+
+       ll sum5=diff-diff2;
+       cout<<sum5<<endl;
+   }
+   else
+   {
+        ll sum1=calculate(b-1);
+       ll sum2=calculate(a);
+       ll diff=sum2-sum1;
+       cout<<diff<<endl;
+       b=(b-1)/2;
+       a=a/2;
+       ll sum3=calculate2(b);
+       ll sum4=calculate2(a);
+       ll diff2=sum4-sum3;
+       cout<<diff2<<endl;
+
+       ll sum5=diff-diff2;
+       cout<<sum5<<endl;
+   }
+}
