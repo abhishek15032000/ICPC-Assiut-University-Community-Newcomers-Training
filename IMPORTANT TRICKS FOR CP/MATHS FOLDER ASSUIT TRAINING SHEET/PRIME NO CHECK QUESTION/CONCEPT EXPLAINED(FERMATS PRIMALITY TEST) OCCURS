@@ -1,0 +1,86 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/B    =====PROBLEM LINK 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+
+ll modular_multiplication(ll a,ll b,ll n)
+{
+    ll x=0;
+    ll y=a%n;
+    while(b>0)
+    {
+        if(b&1)
+        {
+            x=(x+y)%n;
+        }
+        y=(y*2LL)%n;
+        b=b>>1;
+    }
+    return (x%n);
+}
+
+
+ll bin_expo(ll a,ll b,ll n)
+{
+   ll res=1;
+   while(b)
+   {
+       if(b&1)
+       {
+           res=modular_multiplication(res,a,n);
+           b--;
+       }
+       a=modular_multiplication(a,a,n);
+       b=b>>1;
+
+   }
+   return (res%n);
+}
+
+
+bool check(ll n,ll iterations=10)
+{
+    if(n<=4)
+    {
+        return n==2 or n==3;
+    }
+    for(ll i=1;i<=iterations;i++)
+    {
+        ll a=2+rand()%n-3;
+        if(bin_expo(a,n-1,n)!=1)
+         return false;
+    }
+    return true;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    if(check(n))
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+}
