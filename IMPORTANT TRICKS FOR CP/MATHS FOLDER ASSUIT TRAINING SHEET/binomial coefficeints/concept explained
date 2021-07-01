@@ -1,0 +1,70 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/L    -----PROBLEM LINK
+
+
+
+https://www.geeksforgeeks.org/space-and-time-efficient-binomial-coefficient/   ----GFG ARTICLE OF HOW TO CALCULATE BINOMIAL COEFFICIENT FAST AND CONSUME LESS SPACE 
+AT THE SAME TIME
+
+
+at first i was doing the mistake of calculating nCr using fact(n)/(fact(r)*fact(n-r)) this solution worked fine for caluclating binomial coefficients
+for low VALUE OF "N"
+
+BUT WHEN N BECAME LARGE OVERFLOW HAPPENED EVEN LONG LONG INT WON'T HANDLE IT 
+
+SO I SAW THIS ARTICLE WHERE IT CALCULATED BINOMIAL COEEFICIENTS IN A FASTER WAY WITHOUT OVERFLOW
+
+nCr=nC(n-r) we can caluclate doing this also
+
+
+
+so it used this property but the catch is r is smaller
+
+if (k<n-k) like if calulate 6C2 then 2 <4 so it would be more feasible to calucalte 6C2  to avoid large computation
+
+but if k>n-k  like 6C5 HERE 5>6-5 THEN IT WOULD BE MORE FEASIBLE TO CALCULATE 6C1 to avoid computations
+
+
+"the only thing here was to decide when to use k and when to use n-k if (k<n-K) we can use k itslef 
+  if not then we would use n-k to reduce our computations "
+  
+  
+  
+  CODE//
+  
+  
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define mod 100000000000000007
+
+ll binomial_coefficient(ll n,ll k)
+{
+    if(k>n-k)
+    k=n-k;
+
+    ll res=1;
+    for(ll i=0;i<k;i++)
+    {
+        res*=(n-i);
+        res/=(i+1);
+    }
+    return res;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    ll res=1;
+    for(ll i=1;i<=n;i++)
+    {
+        for(ll j=0;j<i;j++)
+        {
+           cout<<binomial_coefficient(i-1,j)<<" ";
+        }
+        cout<<endl;
+    }
+}
