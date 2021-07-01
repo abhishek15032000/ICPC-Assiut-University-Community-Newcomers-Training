@@ -1,0 +1,108 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/I     -----problem link
+
+
+
+
+i tried many techniques from brute force -which gave tle
+
+and tried on optimization on like 
+
+
+i=0;
+sum=0;
+while(i<=b)
+{
+   if(i>=a and i<=b)
+   sum=sum+i;
+   
+   i=i+x;
+}
+
+
+this only passed 6 test cases 
+
+then i gave thought on ap and started figuring out the formula ....i knew n/2(first+last) was to be used here...but how to get n correctly and first 
+and last within range was a problem ..i tried until i saw a gfg article which explained it very nicely
+
+
+
+https://www.geeksforgeeks.org/sum-of-all-numbers-in-the-given-range-which-are-divisible-by-m/    -----GFG PROBLEM LINK SOLUTION
+
+
+
+then i implemented it and i saw the explanation of steps it did and why it did
+
+
+like why it did first<A to first=first+x to bring in RANGE
+and last>B to last=last-x to bring in range 
+
+[A,B]
+
+
+how to calculate n=(B)/x- (A-1)/x;
+
+CODE////
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+
+ll findleft(ll a,ll x)
+{
+    if(a%x==0)
+    return a;
+
+    ll remainder=a%x;
+    return (a-remainder);
+}
+
+
+ll findright(ll b,ll x)
+{
+    ll remainder=(b+x)%x;
+    if(remainder==0)
+    {
+        return b;
+    }
+    return (b+x-remainder);
+}
+
+
+ll calculate_sum(ll a,ll b,ll x)
+{
+   ll L=findleft(a,x);
+   ll R=findright(b,x);
+
+   if(L<a)
+   {
+       L=L+x;
+   }
+   if(R>b)
+   {
+       R=R-x;
+   }
+
+   ll terms=(b/x)-(a-1)/x;
+
+   ll ans=(terms)*(L+R)/2;
+   return ans;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll a,b,x;
+    cin>>a>>b>>x;
+    if(a>=b)
+    {
+        cout<<calculate_sum(b,a,x)<<"\n";
+    }
+    else
+    {
+       cout<<calculate_sum(a,b,x)<<"\n";
+    }
+}
