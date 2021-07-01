@@ -1,0 +1,104 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/F    ---PROBLEM LINK 
+
+
+CODE ////
+HERE I MADE A SILLY MISTAKE THAT IN THE K LOOP OF ADDITION WE NEED TO ITERATE TILL THE COMMON OF BOTH MATRIXES
+
+
+R1,C1=ROW AND COLUMN OF MATRIX 1
+R2,C2=ROW AND COLUMN OF MATRIX 2
+
+FOR MULTIPLICATION THIS CONDITION (C1=R2) MUST BE SATISFIED AND THE RESULTING MATRIX DIMENSIONS WOULD BE R1,C2
+
+SO IN THE K LOOP WE NEED TO ITERATE OVER C1 OR R2 AS THESE ARE COMMON TO BOTH THE MATRIXES 
+I WAS ITERATING OVER C2 AS I THOUGHT THE RESULTING MATRIX DIMENSIONS WERE R1 ,C2 SO I SHOULD ITERATE OVER C2 TIMES
+BUT WE HAVE TO ITERATE OVER ANY OF THE TWO COMMON DIMENSIONS OF THE TWO MATRIX  
+AND I GOT THE ANS (AC)
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define N 101
+ ll res[N][N];
+void multiply(ll arr[][N],ll arr2[][N],ll rows,ll columns,ll columns1)
+{
+  
+   for(int i=0;i<rows;i++)
+   {
+   	for(int j=0;j<columns;j++)
+   	{
+   	    res[i][j]=0;
+   	    for(int k=0;k<columns1;k++)
+   	    {  // cout<<arr[i][k]<<"*"<<arr2[k][j]<<" ";
+   	    	res[i][j]+=(arr[i][k]*arr2[k][j]);
+   	    }
+   	   // cout<<endl;
+   	}
+   	
+   }
+   
+   for(int i=0;i<rows;i++)
+   {
+   	for(int j=0;j<columns;j++)
+   	{
+   		cout<<res[i][j]<<" ";
+   	}
+   	cout<<"\n";
+   }
+   
+
+}
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll arr1[N][N];
+	ll arr2[N][N];
+	ll rows1,columns1;
+	ll rows2,columns2;
+	cin>>rows1>>columns1;
+	for(int i=0;i<rows1;i++)
+	{
+		for(int j=0;j<columns1;j++)
+		{
+			cin>>arr1[i][j];
+		}
+	}
+	cin>>rows2>>columns2;
+	for(int i=0;i<rows2;i++)
+	{
+		for(int j=0;j<columns2;j++)
+		{
+			cin>>arr2[i][j];
+		}
+	}
+	
+	/*for(int i=0;i<rows1;i++)
+	{
+		for(int j=0;j<columns1;j++)
+		{
+			cout<<arr1[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+		for(int i=0;i<rows2;i++)
+	{
+		for(int j=0;j<columns2;j++)
+		{
+			cout<<arr2[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+	*/
+	if(columns1==rows2)
+	multiply(arr1,arr2,rows1,columns2,columns1);
+	/*if(columns2=rows1)
+	multiply(arr2,arr1,rows2,columns1);
+	*/
+} 
