@@ -1,0 +1,37 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/M   ---PROBLEM LINK
+
+
+
+earlier i was doing the long division method only but somehow i made it complicated and made the complexity more by using functions like stoi and to string types 
+but the actual problem could be solved using the same process i did but without increased complexity
+
+
+CODE
+////
+IT DID NOT STRIKE ME THAT THERE COULD BE A WAY THE FOR LOOP COULD BE WRITTEN IN THAT WAY ALSO 
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	string n;ll x;
+	cin>>n>>x;
+	ll r=0;
+	for(ll i=0;i<n.length();i++)
+	{
+		r=r*10+(n[i]-'0');
+		if(r>=x)
+		r=r%x;
+	}
+	if(r==0)
+	cout<<"YES"<<endl;
+	else
+	cout<<"NO"<<endl;
+}
