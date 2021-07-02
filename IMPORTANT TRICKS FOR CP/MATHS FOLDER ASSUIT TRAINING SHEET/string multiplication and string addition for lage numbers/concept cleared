@@ -1,0 +1,95 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/O   ---PROBLEM LINK
+
+
+
+
+
+https://www.geeksforgeeks.org/sum-two-large-numbers/   ----used this as a refernce when was stuck for not getting correct ans and find put why
+
+
+CODE///
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void add(string n,string use)
+{
+   
+   if(n.length()<=use.length())
+   {
+      ll x=stoi(n);
+      ll y=stoi(use);
+      cout<<(x+y)<<endl;
+   }
+   else
+   {    
+       reverse(n.begin(),n.end());
+       int carry=0;
+       string str;
+       int i;
+       for(i=0;i<use.length();i++)
+       {
+           int x=(n[i]-'0')+(use[i]-'0')+carry;
+           carry=x/10;
+           str.push_back(x%10+'0');
+       }
+       for(;i<n.length();i++)
+       {
+           int x=(n[i]-'0')+carry;
+           carry=x/10;
+           str.push_back(x%10+'0');
+       }
+       if(carry)
+       {
+           str.push_back(carry+'0');
+       }
+       reverse(str.begin(),str.end());
+       cout<<str<<endl;
+   }
+   
+}
+
+void multiply(string n,string use)
+{
+    if(n.length()<=use.length())
+    {
+        ll x=stoi(n);
+        ll y=stoi(use);
+        cout<<(x*y)<<endl;
+    }
+    else
+    {
+        string str;
+        reverse(n.begin(),n.end());
+        int carry=0;
+        int k=stoi(use);
+        for(int i=0;i<n.length();i++)
+        {
+             int x=(n[i]-'0')*k+carry;
+             carry=x/10;
+             str.push_back(x%10+'0');
+        }
+       // cout<<carry<<endl;
+        while(carry)
+        {
+            str.push_back(carry%10+'0');
+            carry=carry/10;
+        }
+        reverse(str.begin(),str.end());
+        cout<<str<<endl;
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    string n;
+    cin>>n;
+    string use="9999";
+    add(n,use);
+    multiply(n,use);
+}
