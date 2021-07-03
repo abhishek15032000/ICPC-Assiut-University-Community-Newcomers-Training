@@ -1,0 +1,34 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/T   ---PROBLEM LINK
+
+
+CODE////
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll centre_x,centre_y,radius;
+    cin>>centre_x>>centre_y>>radius;
+    ll n;
+    cin>>n;
+    while(n--)
+    {
+        ll x, y;
+        cin>>x>>y;
+        double distance=sqrt(pow(abs(centre_x-x),2)+pow(abs(centre_y-y),2));
+        if(distance<=(double)radius)
+        {
+            cout<<"YES"<<"\n";
+        }
+        else
+        {
+            cout<<"NO"<<"\n";
+        }
+    }
+    
+    
+}
