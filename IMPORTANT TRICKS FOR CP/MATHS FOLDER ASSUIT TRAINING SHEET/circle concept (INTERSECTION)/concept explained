@@ -1,0 +1,47 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/W    -----problem link
+
+
+
+check if two circles intersect when the the coordinates of diameter points of both the circles are given 
+
+
+
+https://www.geeksforgeeks.org/check-two-given-circles-touch-intersect/ ----GFG REFERNCE ARTICLE 
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll x1,y1,x2,y2;
+    cin>>x1>>y1>>x2>>y2;
+    ll x3,y3,x4,y4;
+    cin>>x3>>y3>>x4>>y4;
+
+    double centre_x_1=(x1+x2)/2;
+    double centre_y_1=(y1+y2)/2;
+
+    double centre_x_2=(x3+x4)/2;
+    double centre_y_2=(y3+y4)/2;
+
+   double radius_1st_circle=sqrt(pow(abs(centre_x_1-x2),2)+pow(abs(centre_y_1-y2),2));
+   double radius_2nd_circle=sqrt(pow(abs(centre_x_2-x3),2)+pow(abs(centre_y_2-y3),2));
+   
+   double distance=sqrt(pow(abs(centre_x_2-centre_x_1),2)+pow(abs(centre_y_2-centre_y_1),2));
+   if(distance>(radius_1st_circle+radius_2nd_circle))
+   {
+       cout<<"NO"<<"\n";
+   }
+   else
+   {
+       cout<<"YES"<<"\n";
+   }
+
+
+}
