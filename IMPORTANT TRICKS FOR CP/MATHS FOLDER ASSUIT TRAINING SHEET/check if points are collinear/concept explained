@@ -1,0 +1,60 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/U    -----PROBLEM LINK
+
+
+i was applying the concepts of calculating slopes like 
+for EG:- X1,Y1 
+         X2,Y2
+         X3,Y3
+         
+         i started calculating slopes =(Y2-Y1)/(X2-X1)
+                               SLOPE2=(Y3-Y2)/(X3-X2)
+                               
+                               
+                               is slopes == slopes2 are equal then these three points are collinear
+                               
+                               
+          but it gave "RUN TIME ERROR "
+          
+ 
+ 
+ then i saw GFG ARTICLE ----- OF HOW TO CALCULATE (https://www.geeksforgeeks.org/program-check-three-points-collinear/)   ----LINK
+                              
+                              
+                              here it applied the concept of that that the triangle formed by these three points will be zero 
+                              
+                              so it is much easier
+                              
+                              area =(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2))
+                              
+                              if (area == 0)
+                              cout<<"YES"<<"\n";
+                              else
+                              cout<<"NO"<<"\n";
+                              
+CODE//////
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll x1,y1,x2,y2,x3,y3;
+    cin>>x1>>y1>>x2>>y2>>x3>>y3;
+    // shoelace formula
+    // area formed by this thrree points will be zero
+
+    double area=0.5*(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2));
+    if(area==0)
+    {
+        cout<<"YES"<<"\n";
+    }
+    else
+    {
+        cout<<"NO"<<"\n";
+    }
+
+}
