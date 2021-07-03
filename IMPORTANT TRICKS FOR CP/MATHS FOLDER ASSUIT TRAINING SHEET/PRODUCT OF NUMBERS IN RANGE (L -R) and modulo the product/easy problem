@@ -1,0 +1,35 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/Q   ---problem link
+
+
+CODE////
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll l,r,modulo;
+    cin>>l>>r>>modulo;
+    if(l<=r)
+    {
+        ll res=1;
+        for(ll i=l;i<=r;i++)
+        {
+            res=(res*i)%modulo;
+        }
+        cout<<res<<"\n";
+    }
+    else
+    {
+        ll res=1;
+        for(ll i=r;i<=l;i++)
+        {
+            res=(res*i)%modulo;
+        }
+        cout<<res<<"\n";
+    }
+}
