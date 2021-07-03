@@ -1,0 +1,32 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/V   ----PROBLEM LINK
+
+CODE////
+
+
+
+(Y2-Y1)      (Y3-Y4)
+_______  ==  ________
+(X2-X1)      (X4-X3)
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll x1,y1,x2,y2;
+    cin>>x1>>y1>>x2>>y2;
+    ll x3,y3,x4,y4;
+    cin>>x3>>y3>>x4>>y4;
+    if((y2-y1)*(x4-x3)==(y4-y3)*(x2-x1))
+    {
+        cout<<"YES"<<"\n";
+    }
+    else
+    {
+        cout<<"NO"<<"\n";
+    }
+
+}
