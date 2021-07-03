@@ -1,0 +1,33 @@
+https://www.geeksforgeeks.org/count-digits-factorial-set-2/   ----REFERNCE FOR KAMENTSKY METHOD
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/P   ----PROBLEM LINK
+
+
+FORMULA IS LOG10(POWER((N/E),N)*SQUARE ROOT(2*PI*N))---IMP 
+
+
+WHEN WE OPEN THE BRACKETS * BECOMES +
+
+
+N*LOG10((N/E))+(LOG(2*PI*N)/2) ----EXPANDED VERSION 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define M_E 2.71828 ///THIS IS THE VALUE OF E
+#define M_PI 3.14159 // THIS IS THE VALUE OF PI
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    //kamentsky method 
+
+    double  x=(n*log10((n/M_E)))+(log10(2*M_PI*n))/2.0;
+    x=floor(x)+1;
+    cout<<"Number of digits of "<<n<<"! is "<<x;
+}
