@@ -1,0 +1,65 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/S    ----problem link
+
+
+https://www.techcrashcourse.com/2015/11/c-program-to-check-whether-triangle-is-valid-or-not-given-sides.html    ----to check if the triangle is valid or not link
+
+
+
+heron's formula = sqrt(s(s-a)(s-b)(s-c)) where a,b,c are the three sides of the triangle and s=(a+b+c)/2
+
+this formula would give the result correct 
+
+
+if we know the base and height of the traingle we can calculate (height*base)/2=area
+but here since sides are given we need to apply pythogras theorem on half of triangle to find height of the triangle then apply formula
+
+
+but here we can do it more conveniently
+
+CODE////
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll a,b,c;
+    cin>>a>>b>>c;
+    
+      if((a+b)>c and (b+c)>a and (c+a)>b)
+      {double s=(a+b+c)/2;
+      double area=sqrt(s*(s-a)*(s-b)*(s-c));
+      
+      cout<<"Valid"<<endl;
+      cout<<fixed<<setprecision(6)<<area<<endl;
+      }
+      else
+        {cout<<"Invalid"<<endl;}
+    
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll a,b,c;
+    cin>>a>>b>>c;
+    
+      if((a+b)>c and (b+c)>a and (c+a)>b)
+      {double s=(a+b+c)/2;
+      double area=sqrt(s*(s-a)*(s-b)*(s-c));
+      
+      cout<<"Valid"<<endl;
+      cout<<fixed<<setprecision(6)<<area<<endl;
+      }
+      else
+        {cout<<"Invalid"<<endl;}
+    
+}
+}
