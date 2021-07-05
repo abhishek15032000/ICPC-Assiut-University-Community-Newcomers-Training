@@ -1,0 +1,44 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223338/problem/Z   ----PROBLEM LINK
+
+
+diagonal length of a sqaure is sqrt(2)*length of one side of a square  
+
+CODE ///
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll r,s;
+    cin>>r>>s;
+    double diameter=(2*r);
+    double diagonal_length=sqrt(2)*s;
+    if(diameter>=s)
+    {
+        if(diameter>diagonal_length)
+        {
+            cout<<"Circle"<<"\n";
+        }
+        else
+        {
+            cout<<"Complex"<<"\n";
+        }
+    }
+    else if(diameter<s)
+    {
+        if(diameter>diagonal_length)
+        {
+            cout<<"Complex"<<"\n";
+        }
+        else
+        {
+            cout<<"Square"<<"\n";
+        }
+    }
+}
