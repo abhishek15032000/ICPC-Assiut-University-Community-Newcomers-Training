@@ -1,0 +1,53 @@
+
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/N  ---PROBLEM LINK 
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define N 101
+#define ll long long int
+void summation_matrix(ll arr[][N],ll arr2[][N], ll rows,ll columns,ll i,ll j)
+{   if(i==rows)
+    return;
+    if(j==columns)
+    {
+        i=i+1;
+        j=0;
+        cout<<"\n";
+    }
+    if(i<rows and j<columns)
+   { ll x=arr[i][j]+arr2[i][j];
+    cout<<x<<" ";
+   }
+    summation_matrix(arr,arr2,rows,columns,i,j+1);
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll x,y;
+    cin>>x>>y;
+    ll arr[N][N];
+    ll arr2[N][N];
+    for(int i=0;i<x;i++)
+    {
+        for(int j=0;j<y;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+     for(int i=0;i<x;i++)
+    {
+        for(int j=0;j<y;j++)
+        {
+            cin>>arr2[i][j];
+        }
+    }
+    summation_matrix(arr,arr2,x,y,0,0);
+}
