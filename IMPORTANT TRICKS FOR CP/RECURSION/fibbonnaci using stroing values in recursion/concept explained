@@ -1,0 +1,32 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+ll fibbonnaci[100];
+int recursion(ll n)
+{   if(n==0)
+    {fibbonnaci[n]=0;
+    return fibbonnaci[n];}
+    else if(n==1)
+    {fibbonnaci[n]=1;
+    return fibbonnaci[n];}
+    if(fibbonnaci[n]==0)
+    {
+        fibbonnaci[n]=recursion(n-1)+recursion(n-2);
+        return fibbonnaci[n];
+    }
+    else
+    {
+        return fibbonnaci[n];
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    cout<<recursion(n)<<endl;
+}
