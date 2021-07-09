@@ -1,0 +1,41 @@
+
+
+
+PROBLEM LINK - ------https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/Q 
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+ll print(ll n,ll count=0)
+{   if(n==1)
+     return (count+1);
+    if(n&1)
+    { 
+        ll x=3*n+1;
+         count+=1;
+         return print(x,count);
+    }
+    else
+    {  
+        ll x=n/2;
+        count+=1;
+        return print(x,count);
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    cout<<print(n)<<endl;
+    
+}
