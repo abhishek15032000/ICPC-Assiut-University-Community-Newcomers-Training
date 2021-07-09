@@ -1,0 +1,40 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/R    ----PROBLEM LINK
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+bool check(ll arr[],ll low,ll high)
+{ 
+    if(low>=high)
+    return true;
+
+    if(arr[low]==arr[high])
+    return check(arr,low+1,high-1);
+    else
+    return false;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    ll arr[n];
+    for(ll i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+ if(check(arr,0,n-1))
+ {
+     cout<<"YES"<<"\n";
+ }
+ else
+ {
+     cout<<"NO"<<"\n";
+ }
+}
