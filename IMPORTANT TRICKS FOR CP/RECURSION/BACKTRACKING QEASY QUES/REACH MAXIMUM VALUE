@@ -1,0 +1,60 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/W   ----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+bool check(ll target,ll start=1)
+{
+    if(start==target)
+    return true;
+
+    if(target<start)
+    return false;
+
+    bool ans= check(target,start*10);
+    bool ans2= check(target,start*20);
+
+    if(ans or ans2)
+    return true;
+    else
+    return false;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        cin>>n;
+        if(check(n))
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+    }
+}
