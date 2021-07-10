@@ -1,0 +1,47 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/X   ---PROBLEM LINK
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define N 10
+vector<ll>v;
+void  max_value(ll arr[][N+1],ll rows,ll columns,ll source_row,ll source_column,ll sum=0)
+{   if(source_row == rows and source_column==columns)
+    { 
+      sum+=arr[source_row][source_column];
+      v.push_back(sum);
+       return ;
+    }
+    if(source_column<columns)
+    {
+        max_value(arr,rows,columns,source_row,source_column+1,sum+arr[source_row][source_column]);
+    }
+    if(source_row<rows)
+    {
+        max_value(arr,rows,columns,source_row+1,source_column,sum+arr[source_row][source_column]);
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll rows,columns;
+    cin>>rows>>columns;
+    ll arr[N+1][N+1];
+    for(ll i=0;i<rows;i++)
+    {
+        for(ll j=0;j<columns;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+    max_value(arr,rows-1,columns-1,0,0);
+    ll maximum=*max_element(v.begin(),v.end());
+    cout<<maximum<<endl;
+}
