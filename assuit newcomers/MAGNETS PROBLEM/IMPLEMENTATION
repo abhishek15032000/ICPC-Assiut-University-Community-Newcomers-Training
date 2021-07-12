@@ -1,0 +1,48 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/G    ------PROBLEM LINK
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int total_count=0;
+    ll n;
+    cin>>n;
+    cin.get();
+    string x;
+    for(int i=0;i<n;i++)
+    {   string temp;
+        if(i==0)
+        {
+            getline(cin,x);
+        }
+        else
+        {
+              getline(cin,temp);
+              if(temp==x)
+              {
+                  
+              }
+              else 
+              {
+                  total_count+=1;
+                  x=temp;
+                  
+              }
+        }
+    }
+    total_count+=1;
+    cout<<total_count<<endl;
+}
