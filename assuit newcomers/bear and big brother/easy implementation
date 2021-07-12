@@ -1,0 +1,32 @@
+
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/D    -----PROBLEM LINK
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll x,y;
+    cin>>x>>y;
+    int count=0;
+    while(y>=x)
+    {
+        x=x*3;
+        y=y*2;
+        count++;
+    }
+    cout<<count<<"\n";
+}
