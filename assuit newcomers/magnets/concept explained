@@ -1,0 +1,62 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/H    -----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+
+
+int binary_searching(vector<pair<int,int>>p ,int value)
+{
+    int low=0;
+    int high=p.size()-1;
+    while(low<=high)
+    {
+        int mid=low+(high-low)/2;
+        if((p[mid].first)==value)
+        {
+            return (p[mid].second); 
+        }
+        else if((p[mid].first)>value)
+        {
+            high=mid-1;
+        }
+        else
+        {
+            low=mid+1;
+        }
+    }
+    return -1;
+
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    vector<pair<int,int>> p;
+    for(int i=1;i<=n;i++)
+    {
+        ll x;
+        cin>>x;
+        p.push_back(make_pair(x,i));
+    }
+    sort(p.begin(),p.end());
+    for(int i=1;i<=n;i++)
+    {
+        ll x=binary_searching(p,i);
+        cout<<x<<" ";
+    }
+}
