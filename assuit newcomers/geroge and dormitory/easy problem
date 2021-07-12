@@ -1,0 +1,30 @@
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/E   ----PROBLEM LINK
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    ll count=0;
+    while(n--)
+    {
+        ll p,q;
+        cin>>p>>q;
+        if(abs(p-q)>=2)
+        {
+            count++;
+        }
+    }
+    cout<<count<<"\n";
+}
