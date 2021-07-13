@@ -1,0 +1,47 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/J   -----PROBLEM LINK
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+vector<string>s;
+void precompute(string asf)
+{   if(asf.find("47")!=string::npos)
+    {
+      s.push_back(asf);
+    }
+    
+    if(asf.length()<3)
+    { precompute(asf+"4");
+      precompute(asf+"7");
+    }
+} 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    precompute("");
+    ll n;
+    cin>>n;
+    s.push_back("4");
+    s.push_back("7");
+    int i;
+    for( i=0;i<s.size();i++)
+    {
+        ll x=stoi(s[i]);
+        if(n%x==0)
+        { cout<<"YES"<<endl;
+           break;
+        }
+        
+    }
+    if(i==s.size())
+    {
+        cout<<"NO"<<endl;
+    }
+}
