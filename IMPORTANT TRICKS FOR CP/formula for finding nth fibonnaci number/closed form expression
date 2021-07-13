@@ -1,0 +1,18 @@
+
+
+
+
+     (1+sqrt(5)/2)=phi
+     (expo(phi,n)/sqrt(5))===closed form expression
+     
+     
+     where n is the nth fiboonaci we have to find
+     
+     
+     
+     code:-
+     double phi=(1+sqrt(5))/2;
+     ll x=round(expo(phi,n)/sqrt(5));
+     
+     
+     
