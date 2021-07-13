@@ -1,0 +1,44 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/I    -----PROBLEM  LINK 
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    string str;
+    getline(cin,str);
+    string t;
+    getline(cin,t);
+    int i=1;
+    int j=1;
+    while(j<=t.length() and i<=str.length())
+    {
+        if(t[j-1]==str[i-1])
+        {
+            i++;
+            j++;
+        }
+        else
+        {
+            j++;
+        }
+    }
+    cout<<i<<endl;
+
+}
