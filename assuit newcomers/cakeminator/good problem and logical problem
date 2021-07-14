@@ -1,0 +1,56 @@
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/N   -----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll rows,columns;
+  cin>>rows>>columns;
+  cin.get();
+  ll rows1[11];
+  ll columns1[11];
+  memset(rows1,-1,sizeof(rows1));
+  memset(columns1,-1,sizeof(columns1));
+  ll sum=0;
+  for(int i=0;i<rows;i++)
+  {
+     for(int j=0;j<columns;j++)
+     {
+        char x;
+        cin>>x;
+        if(x=='S')
+        {
+          rows1[i]=i;
+          columns1[j]=j;
+        }
+     }
+  }
+
+  for(int i=0;i<rows;i++)
+  {
+    for(int j=0;j<columns;j++)
+    {
+         if(rows1[i]>=0 and columns1[j]>=0)
+         continue;
+         else 
+         sum+=1;
+    }
+  }
+  cout<<sum<<endl;
+
+}
