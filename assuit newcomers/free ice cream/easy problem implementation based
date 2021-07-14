@@ -1,0 +1,50 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/O    ----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll n,x;
+  cin>>n>>x;
+  ll count=0;
+  for(int i=0;i<n;i++)
+  { cin.get();
+    char ch;cin>>ch;
+    ll t;cin>>t;
+   // cout<<x<<" "<<t<<endl;
+     if(ch=='-')
+     {
+         if(x>=t)
+         {
+           x=x-t;
+         }
+         else
+         {
+           count++;
+         }
+     }
+     else
+     {
+        x=x+t;
+     }
+  }
+ cout<<x<<" "<<count<<"\n";
+  return 0;
+}
