@@ -1,0 +1,42 @@
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/M   ----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll arr[3];
+  for(ll i=0;i<3;i++)
+  cin>>arr[i];
+
+
+  int min=INT_MAX;
+  for(int i=0;i<3;i++)
+  {
+       int distance_sum=0;
+       for(int j=0;j<3;j++)
+       {
+         distance_sum+=(abs(arr[i]-arr[j]));
+       }
+       if(distance_sum<min)
+       {
+         min=distance_sum;
+       }
+  }
+  cout<<min<<endl;
+
+}
