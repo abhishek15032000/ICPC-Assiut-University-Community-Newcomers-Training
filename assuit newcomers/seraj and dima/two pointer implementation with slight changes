@@ -1,0 +1,78 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/L    -----PRBOLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll n;
+  cin>>n;
+  ll arr[n];
+  for(int i=0;i<n;i++)
+  {
+    cin>>arr[i];
+  }
+  int i=0;
+  int j=n-1;
+  ll seraj=0;
+  ll dima=0;
+  bool ans1=true;
+  bool ans2=false;
+  while(i<=j)
+  {  if(ans1)
+     { if(arr[i]>=arr[j])
+      {
+         seraj+=arr[i];
+         i++;
+         ans2=true;
+         ans1=false;
+         
+      } 
+     else
+      {
+       seraj+=arr[j];
+       j--;
+       ans2=true;
+       ans1=false;
+      }
+
+     }
+     else
+     {
+       if(arr[i]>=arr[j])
+       {
+         dima+=arr[i];
+         i++;
+         ans1=true;
+         ans2=false;
+       }
+       else
+       {
+         dima+=arr[j];
+         j--;
+         ans1=true;
+         ans2=false;
+       }
+
+     }
+     //cout<<seraj<<" "<<dima<<endl;
+  }
+
+  cout<<seraj<<" "<<dima<<"\n";
+}
