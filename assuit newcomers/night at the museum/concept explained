@@ -1,0 +1,25 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/Q   -----PROBLEM LINK
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  string str;
+  getline(cin,str);
+  ll sum=0;
+  char ch='a';
+  for(int i=0;i<str.length();i++)
+  {
+     sum+=min(abs(ch-str[i]),(26-abs(ch-str[i])));
+     ch=str[i];
+  }
+  cout<<sum<<endl;
+}  
