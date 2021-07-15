@@ -1,0 +1,58 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/S   -----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll t;
+  char k;
+  cin>>t;
+  cin>>k;
+  ll ans=0;
+  cin.get();
+  while(t--)
+  {
+     set<char>s;
+     string str;
+     getline(cin,str);
+     int r=(int)(k-'0');
+    // cout<<r<<endl;
+     for(int i=0;i<str.length();i++)
+     {
+         int x=str[i]-'0';
+         //cout<<x<<" ";
+         if((x%10)<=r)
+         {
+           s.insert(str[i]);
+         }
+         if(s.size()==r+1)
+         {
+           ans++;
+           break;
+         }
+        
+
+     }
+    // cout<<r<<endl;
+     s.clear();
+     //cin.get();
+  }
+  cout<<ans<<endl;
+ 
+}
