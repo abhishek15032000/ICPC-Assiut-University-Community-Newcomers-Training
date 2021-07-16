@@ -1,0 +1,47 @@
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/U
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll n;
+  cin>>n;
+  if(n>0)
+  {
+    cout<<n<<endl;
+  }
+  else
+  {
+     string k=to_string(n);
+     string r=k.substr(1);
+     int len=r.length();
+     string first=r.substr(0,len-1);
+     string second=r.substr(0,len-2)+r[len-1];
+     if(first<second)
+     {
+         ll x=stoi(first)*-1;
+         cout<<x<<endl;
+     }
+     else
+     {
+         ll x=stoi(second)*-1;
+         cout<<x<<endl;
+     }
+  }
+
+}
