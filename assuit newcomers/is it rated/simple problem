@@ -1,0 +1,61 @@
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/V   ----PROBLEM LINk
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll n;
+  cin>>n;
+  vector<pair<int,int>>v;
+  while(n--)
+  {
+      ll x,y;
+      cin>>x>>y;
+      v.push_back(make_pair(x,y));
+  }
+  int i;
+  for( i=0;i<v.size();i++)
+  {
+     ll before=v[i].first;
+     ll after=v[i].second;
+     if(before!=after)
+     {
+         cout<<"rated"<<endl;
+         return 0;
+     }
+  }
+  if(i==v.size())
+  {int j=0;
+     for( ;j<v.size()-1;j++)
+     {  // cout<<j<<endl;
+         if(v[j].first>=v[j+1].first)
+         {}
+         else
+         { // cout<<"executed "<<j;
+           cout<<"unrated"<<endl;
+           return 0;
+         }
+     }
+     
+     cout<<"maybe"<<endl;
+
+  }
+}
