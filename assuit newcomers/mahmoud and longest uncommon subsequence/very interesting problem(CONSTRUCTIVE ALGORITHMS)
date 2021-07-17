@@ -1,0 +1,38 @@
+
+https://codeforces.com/problemset/problem/766/A   ------PROBLEM LINK
+
+
+
+https://codeforces.com/blog/entry/50294  ----turtorial link  for the problem  
+the solution blew away my mind 
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  string a,b;
+  getline(cin,a);
+  getline(cin,b);
+  int maximum=-1;
+  if(a==b)
+  {
+    cout<<-1<<endl;
+  }
+  else
+  {
+     int y=max(a.length(),b.length());
+     cout<<y<<endl;
+  }
+}
