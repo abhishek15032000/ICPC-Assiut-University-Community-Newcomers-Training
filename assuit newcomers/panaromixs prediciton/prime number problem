@@ -1,0 +1,58 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/X   ----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll arr[101];
+void seive()
+{  //marked as false
+   arr[0]=arr[1]=1;
+   for(int i=2;i*i<101;i++)
+   {
+      if(!arr[i])
+      {
+         for(int j=i*i;j<=101;j+=i)
+         {
+            if(!arr[j])
+            {
+              arr[j]=1;
+            }
+         }
+      }
+   }
+}
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  seive();
+  ll n,m;
+  cin>>n>>m;
+  int i=n;
+  while(i<101)
+  {  i++;
+     if(!arr[i])
+      break;
+  }
+  if(i==m)
+  {
+    cout<<"YES"<<endl;
+  }
+  else
+  {
+    cout<<"NO"<<endl;
+  }
+
+}
