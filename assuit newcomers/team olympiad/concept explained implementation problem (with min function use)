@@ -1,0 +1,80 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/Y    ----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll a,b,c;
+  a=b=c=0;
+  ll n;
+  cin>>n;
+  ll arr[n];
+  for(int i=0;i<n;i++)
+  {
+     ll x;
+     cin>>x;
+     arr[i]=x;
+     if(x==1)
+     {
+        a++;
+     }
+      if(x==2)
+     {
+        b++;
+     }
+      if(x==3)
+     {
+        c++;
+     }
+  }
+  
+  ll r=min({a,b,c});
+  if(r==0)
+  cout<<0<<endl;
+  else
+  {  int i,j,k;
+  i=j=k=0;
+      cout<<r<<endl;
+      for(int m=0;m<r;m++)
+      {
+         for(  ;i<n;i++)
+         {
+            if(arr[i]==1)
+            {cout<<(i+1)<<" ";
+            i++;
+            break;}
+         }
+          for(;j<n;j++)
+         {
+            if(arr[j]==2)
+            {cout<<(j+1)<<" ";
+            j++;
+            break;}
+         }
+          for( ;k<n;k++)
+         {
+            if(arr[k]==3)
+            {cout<<(k+1)<<" ";
+            k++;
+            break;}
+         }
+         cout<<"\n";
+      } 
+  }
+
+}
