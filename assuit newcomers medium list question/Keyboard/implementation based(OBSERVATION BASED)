@@ -1,0 +1,85 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/E   ---PROBLEM LINK
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   vector<vector<char>>v={{'q','w','e','r','t','y','u','i','o','p'},{'a','s','d','f','g','h','j','k','l',';'},{'z','x','c','v','b','n','m',',','.','/'}};
+   string s;
+   getline(cin,s);
+   if(s=="R")
+   { 
+      string k;
+      getline(cin,k);
+      for(int i=0;i<k.length();i++)
+      {
+           char x=k[i];
+           int prev_i,prev_j;prev_i=prev_j=0;
+           for(int j=0;j<v.size();j++)
+           {
+              for(int k=0;k<v[j].size();k++)
+              {
+                  if(v[j][k]==x)
+                  {
+                     cout<<v[prev_i][prev_j];
+                     break;
+                  }
+                  prev_i=j;
+                  prev_j=k;
+              }
+           }
+      }
+   }
+   if(s=="L")
+   {
+        string k;
+      getline(cin,k);
+      for(int i=0;i<k.length();i++)
+      {
+           char x=k[i];
+           int prev_i,prev_j;prev_i=prev_j=0;
+           for(int j=0;j<v.size();j++)
+           {
+              for(int k=0;k<v[j].size();k++)
+              {
+                  if(v[j][k]==x)
+                  {
+                      prev_i=j;
+                      prev_j=k;
+                      if((prev_j+1)<v[j].size())
+                      {
+                        prev_j++;
+                       // cout<<prev_i<<" "<<prev_j<<endl;
+                        cout<<v[prev_i][prev_j];
+                      }
+                      else
+                      {
+                         prev_i++;
+                         prev_j=0;
+                       //  cout<<prev_i<<" "<<prev_j<<endl;
+                         cout<<v[prev_i][prev_j];
+                      }
+                     break;
+                  }
+                 
+              }
+             
+           }
+      }
+   }
+
+}
