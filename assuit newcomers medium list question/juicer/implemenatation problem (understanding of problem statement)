@@ -1,0 +1,46 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/D    -----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n,b,d;
+   cin>>n>>b>>d;
+   ll sum=0;
+
+   ll count=0;
+   for(int i=0;i<n;i++)
+   {
+      ll x;
+      cin>>x;
+      if(x<=b)
+      {
+         sum+=x;
+      }
+      else
+      continue;
+      if(sum>d)
+      {sum=0;
+       count++;}
+
+   }
+cout<<count<<endl;
+
+}
