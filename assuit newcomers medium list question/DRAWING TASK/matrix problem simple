@@ -1,0 +1,59 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/A  ---PROBLEM LINK
+
+
+
+careful for max and min while taking input of rows and cols to be changed in the matrix
+ 
+
+
+
+thats why i had to use max and min function here so as to avoid thos random inputs which will break the code
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define N 101
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   char arr[N][N];
+   ll n,m,q;
+   cin>>n>>m>>q;
+   for(ll i=0;i<n;i++)
+   {
+      for(ll j=0;j<m;j++)
+      {
+          arr[i][j]='.';
+      }
+   }
+     ll row1,col1,row2,col2;
+       char a;
+   for(ll i=0;i<q;i++)
+   {
+     
+       cin>>row1>>col1>>row2>>col2>>a;
+       for(int i=min(row1,row2)-1;i<max(row1,row2);i++)
+      {
+        for(int j=min(col1,col2)-1;j<max(col1,col2);j++)
+        {
+            arr[i][j]=a;
+        }
+      }
+   }
+
+   for(int i=0;i<n;i++)
+   {
+     for(int j=0;j<m;j++)
+     {
+        cout<<arr[i][j];
+     }
+     cout<<"\n";
+   }
+
+}
