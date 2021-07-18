@@ -1,0 +1,60 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/F   ---PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+ll find_min_diff(vector<int>v,ll i,ll j)
+{   ll max=INT_MIN;
+    ll min=INT_MAX;
+   for(int x=i;x<j;x++)
+   {
+      if(v[x]>max)
+      {
+        max=v[x];
+      }
+      if(v[x]<min)
+      {
+        min=v[x];
+      }
+   }  
+  // cout<<max<<" "<<min<<endl;
+   return abs(max-min);
+}
+
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n,m;
+   cin>>n>>m;
+   vector<int>v;
+   ll minimum=INT_MAX;
+   for(int i=0;i<m;i++)
+   {
+     int x;
+     cin>>x;
+     v.push_back(x);
+   }
+   sort(v.begin(),v.end());
+   int i=0;
+   int j=n;
+   for(;i<=m and j<=m;i++,j++)
+   { //  cout<<i<<" "<<j;
+       ll x=find_min_diff(v,i,j);
+       minimum=min(x,minimum);
+   }
+   cout<<minimum<<endl;
+}
