@@ -1,0 +1,60 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/H   ----PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n;
+   cin>>n;
+   cin.ignore();
+   string s;
+   getline(cin,s);
+   if(s.find("RL")!=string::npos)
+   {
+       int arr[n];
+      for(int i=0;i<n;i++)
+     {
+        cin>>arr[i];
+     }
+     
+     int minimum_time_collision=INT_MAX;
+     for(int i=0;i<s.length();i++)
+     {
+        if(i+1<s.length())
+        {
+            if(s[i]=='R' and s[i+1]=='L')
+            {
+               int diff=abs(arr[i]-arr[i+1]);
+               int time_of_collision=diff/2;;
+               minimum_time_collision=min(minimum_time_collision,time_of_collision);
+            }
+        }
+        else
+        break;
+        
+     }
+     if(minimum_time_collision!=INT_MAX)
+     cout<<minimum_time_collision<<endl;
+     else
+     cout<<-1<<endl;
+   }
+   else
+   {
+     cout<<-1<<endl;
+   }
+
+}
