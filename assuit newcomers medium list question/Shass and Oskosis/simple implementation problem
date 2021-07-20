@@ -1,0 +1,58 @@
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/J   ----PROBLEM LINK
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n;
+   cin>>n;
+   ll arr[n];
+   for(int i=0;i<n;i++)
+   {
+     cin>>arr[i];
+   }
+   int m;
+   cin>>m;
+   vector<pair<int,int>>v;
+   for(int i=0;i<m;i++)
+   {
+     ll x,y;
+     cin>>x>>y;
+     v.push_back(make_pair(x,y));
+   }
+   
+   for(int i=0;i<v.size();i++)
+   {
+      int wire=v[i].first-1;
+      int bird_no=v[i].second;
+      int bird_to_the_left=bird_no-1;
+      int bird_to_the_right=arr[wire]-bird_no;
+      if(wire-1>=0 )
+      {  
+          arr[wire-1]+=bird_to_the_left;
+          
+      }
+      
+      if(wire+1<n)
+      {
+         
+         arr[wire+1]+=bird_to_the_right;
+         
+      }
+      arr[wire]=0;
+   }
+   for(auto &x:arr)
+   cout<<x<<endl;
+}
