@@ -1,0 +1,101 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/R   ---PROBLEM LINK
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   string str;
+   getline(cin,str);
+   string weight_extra;
+   cin>>weight_extra;
+   int weights_to_the_left=0;
+   int weights_to_the_right=0;
+   bool ans=false;
+   for(int i=0;i<str.length();i++)
+   {  if(!ans)
+      {
+        if(str[i]!='|')
+      {
+         weights_to_the_left++; 
+      }
+      else
+      {
+        ans=true;
+        continue;
+      }
+   }
+   else
+   {
+      weights_to_the_right++;
+   }
+}
+
+int diff=abs(weights_to_the_right-weights_to_the_left);
+//cout<<diff<<endl;
+if(weight_extra.length()>=diff and diff>0)
+{
+    string temp=weight_extra.substr(0,diff);
+    weight_extra.erase(0,diff);
+    if(weights_to_the_left<weights_to_the_right)
+    {
+      str=temp+str;
+    }
+    else
+    {
+      str=str+temp;
+    }
+    int left=weight_extra.length();
+    //cout<<left<<endl;
+    if(left%2==0 and left>=2)
+    {
+       string temp2=weight_extra.substr(0,left/2);
+       string temp3=weight_extra.substr(left/2);
+       weight_extra.erase();
+       str=temp2+str;
+       str=str+temp3;
+       cout<<str<<endl;
+    } 
+    else if(left==0)
+    {
+      cout<<str<<endl;
+    }
+    else
+    {
+      cout<<"Impossible"<<endl;
+    }
+}
+else if(diff==0 and weight_extra.length()%2==0 and weight_extra.length()>=2)
+{
+   int diff=weight_extra.length()/2;
+   string temp1=weight_extra.substr(0,diff);
+   string temp2=weight_extra.substr(diff);
+ /*  cout<<temp1<<endl;
+   cout<<temp2<<endl;*/
+   str=temp1+str;
+   str=str+temp2;
+   weight_extra.erase();
+   cout<<str<<endl;
+}
+else
+{
+  cout<<"Impossible"<<endl;
+}
+}
