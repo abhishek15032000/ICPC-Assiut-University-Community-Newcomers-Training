@@ -1,0 +1,86 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/U   ---PROBLEM LINK 
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+#define N 1000001
+ll arr[N];
+void prime()
+{ 
+  arr[0]=arr[1]=1;
+  for(int i=2;i*i<=N;i++)
+  {
+     if(arr[i]==0)
+     {
+        for(int j=i*i;j<=N;j+=i)
+        {
+           if(arr[j]==0)
+           {
+              arr[j]=1;
+           }
+        }
+     }
+  }
+  
+}
+
+bool fun(ll x)
+{  
+   double r=sqrt(x);
+   int y=sqrt(x);
+  // cout<<"executed"<<endl;
+   if(r==y)
+   {
+     return 1;
+
+   }
+   else
+   {
+     return 0;
+   }
+}
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   prime();
+   ll n;
+   cin>>n;
+   for(int i=1;i<=n;i++)
+   {
+      ll x;
+      cin>>x;
+      int z=sqrt(x);
+     
+      if(x==4)
+      { // cout<<"executed1"<<endl;
+        cout<<"YES"<<endl;
+      }
+      else if(x%2==0)
+      { // cout<<"executed2"<<endl;
+        cout<<"NO"<<endl;
+      }
+      else if(fun(x)==1 and arr[z]==0)
+      {  //cout<<"executed3"<<endl; 
+        cout<<"YES"<<endl;
+      }
+      else
+      { //cout<<"executed4"<<endl;
+        cout<<"NO"<<endl;
+      }
+   }
+}
