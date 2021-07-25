@@ -1,0 +1,34 @@
+Polo the Penguin and Segments  --- - -- - - https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/Y   ---PROBLEM LINK
+
+
+
+HERE THE MAIN THING TO LEARN WAS THAT TO MAKE A NUMBER "X" A MULTIPLE OF "Y" BY ADDING SOME INTEGER TO IT...WE CAN FIND THIS INTEGER BY
+ 
+ (Y-(X%Y))%Y===THE INTEGER REQUIRED TO ADD TO "X" TO MAKE IT AS A MULTIPLE OF "Y" 
+ 
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n,k;
+   cin>>n>>k;
+   ll sum=0;
+   for(int i=0;i<n;i++)
+   {
+      ll left,right;
+      cin>>left>>right;
+      sum+=(right-left+1);
+   }
+   if(sum%k==0)
+   cout<<0<<endl;
+   else
+   {
+      ll ans=(k-(sum%k))%k;
+      cout<<ans<<endl;
+   }
+} 
