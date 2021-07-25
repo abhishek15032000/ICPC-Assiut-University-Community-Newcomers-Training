@@ -1,0 +1,36 @@
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/V   ---PROBLEM LINK '
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n;
+   cin>>n;
+   int check=1;
+   for(int i=0;i<n;i++)
+   {
+      ll x;
+      cin>>x;
+      if(x%2==0)
+      {
+        cout<<x/2<<endl;
+      }
+      else
+      {
+         cout<<(x+check)/2<<endl;
+         check*=-1;
+      }
+   }
+   
+}
