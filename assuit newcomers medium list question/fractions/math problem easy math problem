@@ -1,0 +1,68 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/Z   ---PROBLEM LINK' 
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   string s1,s2;
+   cin>>s1>>s2;
+
+   int a1,b1,a2,b2;
+    string k;
+   int i;
+   for(;i<s1.length();i++)
+   {  if(s1[i]!='/')
+      { k+=s1[i];
+      }
+      else 
+      {
+        break;
+      }
+   }
+   a1=stoi(k);
+   k.clear();
+   k=s1.substr(i+1);
+   b1=stoi(k);
+   k.clear();
+   i=0;
+    for(;i<s2.length();i++)
+   {  if(s2[i]!='/')
+      { k+=s2[i];
+      }
+      else 
+      {
+        break;
+      }
+   }
+   a2=stoi(k);
+   k.clear();
+   k=s2.substr(i+1);
+   b2=stoi(k);
+   k.clear();
+   if(a1%b1==0)
+   {
+      a1=a1/b1;
+      b1=1;
+   }
+   if(a2%b2==0)
+   {
+      a2=a2/b2;
+      b2=1;
+   }
+   int x=__gcd(a1,a2);
+   int numerator=a1/x *a2;
+
+   int denominator=__gcd(b1,b2);
+   cout<<numerator<<"/"<<denominator<<endl;
+}
