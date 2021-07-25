@@ -1,0 +1,49 @@
+
+
+
+https://codeforces.com/group/MWSDmqGsZm/contest/223207/problem/X   ---PROBLEM LINK 
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll  n,k;
+  cin>>n>>k;
+  ll number_of_points=2*n+1;
+  ll arr[number_of_points+1];
+  for(int i=1;i<number_of_points+1;i++)
+  {
+     cin>>arr[i];
+  }
+  ll count=0;
+  for(int i=1;i<number_of_points+1;i++)
+  {
+     if(i%2==0)
+     {
+        if( i+1<number_of_points+1 and abs(arr[i]-arr[i-1])>=2 and abs(arr[i]-arr[i+1])>=2 and count<k)
+        {
+           arr[i]=arr[i]-1;
+           count++;
+        }
+     }
+  }
+  for(int i=1;i<number_of_points+1;i++)
+  {
+     cout<<arr[i]<<" ";
+  }
+}
