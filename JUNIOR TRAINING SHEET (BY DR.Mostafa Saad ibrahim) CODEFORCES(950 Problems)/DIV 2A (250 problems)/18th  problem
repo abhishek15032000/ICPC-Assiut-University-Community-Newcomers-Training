@@ -1,0 +1,43 @@
+
+
+
+
+
+
+https://codeforces.com/contest/732/problem/A   ---PROBLEM LINK 
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n,r;
+   cin>>n>>r;
+   ll x=n;
+   int count=1;
+   while(true)
+   {
+      if(n%10==0)
+      {
+         break;
+      }
+      else if(n%10==r)
+      {
+         break;
+      }
+      else
+      {
+         n=n+x;
+         count++;
+      }
+   }
+   cout<<count<<endl;
+}
