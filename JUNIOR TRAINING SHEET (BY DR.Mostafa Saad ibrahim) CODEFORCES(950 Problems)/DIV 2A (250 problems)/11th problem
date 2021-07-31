@@ -1,0 +1,69 @@
+
+
+
+https://codeforces.com/contest/381/problem/A   --PROBLEM LINK 
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll  n;
+   cin>>n;
+   ll arr[n];
+   for(int i=0;i<n;i++)
+   {
+     cin>>arr[i];
+   }
+   //sort(arr,arr+n);
+   int first_player=0;
+   int second_player=0;
+   bool move_taken=true;
+   int j=n-1;
+   int i=0;
+   while(i<=j)
+   {
+      if(move_taken)
+      {
+         if(arr[i]>=arr[j])
+         {
+           first_player+=arr[i];
+           i++;
+           move_taken=false;
+         }
+         else
+         {
+           first_player+=arr[j];
+           j--;
+           move_taken=false;
+         }
+      }
+      else
+      {
+          if(arr[i]>=arr[j])
+         {
+           second_player+=arr[i];
+           i++;
+           move_taken=true;
+         }
+         else
+         {
+           second_player+=arr[j];
+           j--;
+           move_taken=true;
+         }
+     }
+   }
+   cout<<first_player<<" "<<second_player<<endl;
+}
