@@ -1,0 +1,28 @@
+
+
+http://codeforces.com/contest/731/problem/A   ---PROBLEM LINK 
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   int count=0;
+   string s;
+   getline(cin,s); 
+   char x='a';
+   for(int i=0;i<s.length();i++)
+   { 
+       count+=min(abs(s[i]-x),(26-abs(s[i]-x)));
+       x=s[i];
+   }
+   cout<<count<<endl;
+}
