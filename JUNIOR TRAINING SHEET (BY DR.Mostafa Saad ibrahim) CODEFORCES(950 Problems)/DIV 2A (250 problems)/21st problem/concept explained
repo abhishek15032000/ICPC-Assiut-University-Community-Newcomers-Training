@@ -1,0 +1,66 @@
+
+
+
+https://codeforces.com/contest/294/problem/A  --PROBLEM LINK 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll n;
+  cin>>n;
+  ll arr[n];
+  for(int i=0;i<n;i++)
+  {
+    cin>>arr[i];
+  }
+  ll m;
+  cin>>m;
+  vector<pair<int,int>>p;
+  for(int i=0;i<m;i++)
+  {
+     ll x,y;
+     cin>>x>>y;
+     p.push_back(make_pair(x,y));
+  }
+
+  for(int i=0;i<p.size();i++)
+  {
+     int wire=p[i].first;
+     int bird=p[i].second;
+     int left=bird-1;
+     int right=arr[wire-1]-bird;
+     if(wire>1)
+     {
+        arr[wire-2]+=left;
+     }
+     if(wire<n)
+     {
+        arr[wire]+=right;
+     }
+     arr[wire-1]=0;
+  }
+
+  for(auto &x:arr)
+  {
+    cout<<x<<endl;
+  }
+  
+}
