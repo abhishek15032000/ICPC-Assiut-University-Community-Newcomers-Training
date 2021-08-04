@@ -1,0 +1,35 @@
+
+http://codeforces.com/contest/799/problem/A   ----PROBLEM LINK 
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+ ios_base::sync_with_stdio(false);
+ cin.tie(NULL);
+ cout.tie(NULL);
+ ll n,t,k,d;
+ cin>>n>>t>>k>>d;
+ 
+ int time=0;
+ while(time<=d)
+ {
+    n=n-k;
+    time+=t;
+ }
+ // here we are checking if we could make n cakes within d time or not
+ // if we are not able to do that then we need a extra microwave 
+ if(n>0)
+ {  
+   cout<<"YES"<<endl;
+ }
+ else
+ {
+   cout<<"NO"<<endl;
+ }
+ 
+ }
+   
