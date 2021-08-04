@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+
+https://codeforces.com/contest/71/problem/A   ---PROBLEM LINK 
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  ll t;
+  cin>>t;
+  cin.get();
+  while(t--)
+  {
+    string s;
+    getline(cin,s);
+    if(s.length()>10)
+    {
+       int x=s.length()-2;
+       int index=s.length()-1;
+       string con=to_string(x);
+       string temp=s[0]+con+s[index];
+       cout<<temp<<endl;
+    }
+    else
+    {
+      cout<<s<<endl;
+    }
+  }
+}
