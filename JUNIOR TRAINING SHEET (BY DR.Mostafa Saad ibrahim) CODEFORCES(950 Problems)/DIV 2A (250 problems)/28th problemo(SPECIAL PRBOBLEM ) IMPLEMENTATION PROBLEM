@@ -1,0 +1,41 @@
+
+https://codeforces.com/contest/770/problem/A   ---problem link 
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n,k;
+   cin>>n>>k;
+   int j=0;
+   string s;
+   int i=97;
+   for(int j=1;j<=k;j++)
+   { 
+      s+=(char)(i);
+      i++;
+   }
+   int iterations=i-97;
+   string temp=s;
+   int r=k;
+   while(r+k<=n)
+   {
+      s+=temp;
+      r=r+k;
+   }
+   
+   int diff=n-r;
+   int m=0;
+   for(int i=0;i<iterations and m<diff;i++)
+   {
+      s+=(char)(i+97);
+      m++;
+   }
+   cout<<s<<endl;
+}
