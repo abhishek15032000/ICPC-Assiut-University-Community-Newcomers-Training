@@ -1,0 +1,47 @@
+
+http://codeforces.com/contest/339/problem/A   ---problem link 
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
+   cout.tie(NULL);
+   ll n,x;
+   cin>>n>>x;
+   ll current=x;
+   ll count=0;
+   for(int i=1;i<=n;i++)
+   {
+      char x;
+      ll y;
+      cin>>x>>y;
+      if(x=='+')
+      {
+        current+=y;
+      }
+      else
+      {
+         if(current>=y)
+         {
+            current=current-y;
+         }
+         else
+         {
+           count++;
+         }
+      }
+   }
+   cout<<current<<" "<<count<<endl;
+}
