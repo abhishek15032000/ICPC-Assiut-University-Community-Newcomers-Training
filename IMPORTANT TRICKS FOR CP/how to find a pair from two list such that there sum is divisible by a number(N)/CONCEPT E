@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+http://codeforces.com/contest/682/problem/A  ---problem link 
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+const double pi=acos((double)-1);
+
+
+///solve how to find pairs such that there sum is divisible by 5
+
+
+int main()
+{
+     ios_base::sync_with_stdio(false);
+     cin.tie(NULL);
+     cout.tie(NULL);
+
+     ll n,m;
+     cin>>n>>m;
+     vector<vector<int>>v(5);
+     for(int i=1;i<=max(n,m);i++)
+     {
+         int x=i%5;
+         v[x].push_back(i);
+     }
+     ll count=0;
+     for(int i=1;i<=min(n,m);i++)
+     {
+         int x=(5-i%5)%5;
+         count+=v[x].size();
+     }
+     cout<<count<<endl;
+
+
+
+
+}
+
